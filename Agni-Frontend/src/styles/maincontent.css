@@ -1,0 +1,132 @@
+/* Main Content Styling */
+.main-contents {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: auto; /* 2-column grid for desktop */
+  grid-template-rows: 0.3fr 0.3fr 0.3fr 5fr;
+  text-align: center;
+  color: silver;
+}
+span {
+  background-color: rgb(190, 31, 31);
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+}
+main h1 {
+  font-size: 36px;
+  grid-column: span 1; /* Full width heading */
+}
+
+main p {
+  font-size: 18px;
+  grid-column: span 1; /* Full width heading */
+}
+
+/* Marquee Styles */
+.marquee {
+  white-space: nowrap;
+  overflow: hidden;
+  background-color: #dbe914;
+  grid-column: span 1;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.marquee-content p {
+  display: inline-block;
+  animation: scroll 15s linear infinite;
+  margin: 0;
+  padding: 5px;
+  font-weight: bolder;
+  color: black;
+}
+
+/* Scrolling Animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* General styling for the carousel container */
+.cards-carousel {
+  position: relative;
+  display: grid;
+  grid-template-columns: 8;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Wrapper for the cards */
+.cards-wrapper {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Individual card styling */
+.card {
+  min-width: 100%; /* Each card takes up 100% of the width */
+  padding: 0;
+  margin: 0;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+}
+
+.card img {
+  max-width: 40%;
+  border-radius: 5px;
+}
+
+/* Carousel buttons */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(106, 17, 203, 1);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
+
+/* Navigation dots */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  z-index: 2;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: #bbb;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dot.active {
+  background-color: rgba(106, 17, 203, 1); /* Active dot color */
+}

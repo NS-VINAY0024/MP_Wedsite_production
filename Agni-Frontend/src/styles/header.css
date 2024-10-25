@@ -1,0 +1,131 @@
+/* Header Styling */
+header {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Left section and right section */
+  align-items: center;
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  padding: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.left-section {
+  display: flex;
+  align-items: center; /* Align logo and nav in a row */
+}
+
+.left-section .logo {
+  max-width: 70px; /* Logo size */
+  margin-right: 20px;
+}
+
+.left-section ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.left-section ul li {
+  margin-right: 20px;
+}
+
+.left-section ul li a {
+  text-decoration: none;
+  color: silver;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.left-section ul li a:hover {
+  color: #2575fc;
+}
+
+/* Right-side Section (Cart and Hamburger) */
+.right-section {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.cart {
+  margin-right: 20px;
+}
+
+.cart-icon {
+  width: 30px;
+}
+
+.hamburger-menu {
+  position: relative;
+  cursor: pointer;
+}
+
+.hamburger-menu div {
+  font-size: 30px;
+  color: silver;
+}
+
+/* Dropdown Menu Styling */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  right: 0;
+  margin-top: 30px;
+  background-color: rgba(106, 17, 203, 0.4);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+  max-width: 100px;
+  max-height: 200vh;
+  z-index: 10;
+}
+
+.dropdown-menu a {
+  text-decoration: none;
+  position: relative;
+  padding: 0;
+}
+
+.dropdown-menu a::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  transform: scaleX(0);
+  background-color: #d3d3d3;
+  transition: transform 0.1s ease-in-out;
+}
+
+.dropdown-menu a:hover::after {
+  transform: scaleX(1);
+}
+
+.dropdown-menu ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 0;
+}
+
+.dropdown-menu ul li {
+  padding: 10px 20px;
+}
+
+.dropdown-menu ul li a {
+  color: #fafafa;
+  font-size: 16px;
+}
+
+.dropdown-menu ul li a:hover {
+  color: #696969;
+}
+
+.hamburger-menu {
+  position: relative;
+  cursor: pointer;
+}
+
+.hamburger-menu:hover .dropdown-menu {
+  display: block;
+}
